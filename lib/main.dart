@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_website/core/layout_helper.dart';
-import 'package:my_portfolio_website/core/providers/layout_provider.dart';
+import 'package:my_portfolio_website/pages/homepage_responsive.dart';
 import 'package:provider/provider.dart';
 
 import 'core/providers/theme_provider.dart';
 
 void main() {
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(create: (context) => ThemeProvider()),
-      ChangeNotifierProvider(create: (context) => LayoutProvider()),
-    ],
-    child: const MyApp(),
-  ));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -20,11 +13,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Olewuezi Marvellous',
-      debugShowCheckedModeBanner: false,
-      theme: Provider.of<ThemeProvider>(context).themeMode,
-      home: const ResponsiveLayout(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => ThemeProvider()),
+      ],
+      child: Builder(
+        builder: (context) {
+          return MaterialApp(
+            title: 'Olewuezi Marvellous',
+            debugShowCheckedModeBanner: false,
+            theme: Provider.of<ThemeProvider>(context).themeMode,
+            home: const HomepageResponsive(),
+          );
+        },
+      ),
     );
   }
 }

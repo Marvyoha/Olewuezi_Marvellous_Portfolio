@@ -1,35 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../../../../../constants/app_fonts.dart';
-import '../../../core/providers/layout_provider.dart';
+import 'package:my_portfolio_website/constants/app_fonts.dart';
 
 class SectionHeader extends StatelessWidget {
   final String content;
-  const SectionHeader({
-    super.key,
-    required this.content,
-  });
+  const SectionHeader({super.key, required this.content});
 
   @override
   Widget build(BuildContext context) {
-    LayoutProvider layoutProvider =
-        Provider.of<LayoutProvider>(context, listen: true);
-
-    TextStyle fontStyler() {
-      switch (layoutProvider.currentPlatform) {
-        case Platform.desktop:
-          return WriteStyles.header2Desktop(context);
-
-        default:
-          return WriteStyles.header2TabletandMobile(context);
-      }
-    }
-
-    return Text(
-      content,
-      style: fontStyler(),
-    );
+    return Text(content, style: WriteStyles.header2(context));
   }
 }
 

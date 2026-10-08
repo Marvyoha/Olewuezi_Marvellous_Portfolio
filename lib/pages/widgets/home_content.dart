@@ -1,414 +1,138 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
-import 'package:my_portfolio_website/constants/app_constants.dart';
 import 'package:my_portfolio_website/constants/app_fonts.dart';
 import 'package:my_portfolio_website/constants/app_strings.dart';
-import 'package:provider/provider.dart';
+import 'package:my_portfolio_website/core/responsive/responsive_extensions.dart';
 import 'package:simple_icons/simple_icons.dart';
-
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../core/providers/layout_provider.dart';
-
 class HomeContents extends StatelessWidget {
-  final double platformWidth;
-  final double platformHeight;
-  const HomeContents(
-      {super.key, required this.platformWidth, required this.platformHeight});
+  const HomeContents({super.key});
 
   @override
   Widget build(BuildContext context) {
-    LayoutProvider layoutProvider =
-        Provider.of<LayoutProvider>(context, listen: true);
-    Widget layoutChecker() {
-      switch (layoutProvider.currentPlatform) {
-        case Platform.mobile:
-          return MobileHome(
-              platformHeight: platformHeight, platformWidth: platformWidth);
-        case Platform.tablet:
-          return TabletHome(
-              platformHeight: platformHeight, platformWidth: platformWidth);
-        case Platform.desktop:
-          return DesktopHome(
-            platformHeight: platformHeight,
-            platformWidth: platformWidth,
-          );
-      }
-    }
-
-    return layoutChecker();
+    return context.isDesktop
+        ? _buildDesktop(context)
+        : _buildMobileTablet(context);
   }
-}
 
-class MobileHome extends StatelessWidget {
-  const MobileHome({
-    super.key,
-    required this.platformWidth,
-    required this.platformHeight,
-  });
-
-  final double platformWidth;
-  final double platformHeight;
-
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildMobileTablet(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: platformWidth * 0.6,
-              maxHeight: platformHeight * 0.45,
-            ),
-            child: Material(
-              shadowColor: Theme.of(context).colorScheme.secondary,
-              elevation: 5,
-              borderRadius: BorderRadius.circular(40),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(40),
-                child: Image.asset(
-                  Content.profile,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
-        ),
-        GlobalVariables.spaceSmall(),
-        Text(
-          Content.introHeader,
-          style: WriteStyles.header1Mobile(context),
-        ),
-        GlobalVariables.spaceSmallest(),
-        Text(
-          Content.introduction,
-          style: WriteStyles.body1TabletandMobile(context),
-        ),
-        GlobalVariables.spaceSmall(),
+        Center(child: _profileImage(context)),
+        const SizedBox(height: 16),
+        Text(Content.introHeader, style: WriteStyles.header1(context)),
+        const SizedBox(height: 8),
+        Text(Content.introduction, style: WriteStyles.body1(context)),
+        const SizedBox(height: 16),
+        _infoRow(context, Icons.home_outlined, Content.location),
+        const SizedBox(height: 8),
+        _infoRow(context, Icons.email_outlined, Content.email,
+            selectable: true),
+        const SizedBox(height: 8),
+        _infoRow(context, Icons.circle, Content.availability,
+            color: Colors.green),
+        const SizedBox(height: 16),
         Row(
           children: [
-            const Icon(Symbols.home_pin),
-            GlobalVariables.spaceSmaller(isWidth: true),
-            Text(
-              Content.location,
-              style: WriteStyles.body1TabletandMobile(context),
-            ),
-          ],
-        ),
-        GlobalVariables.spaceSmallest(),
-        Row(
-          children: [
-            const Icon(Symbols.email),
-            GlobalVariables.spaceSmaller(isWidth: true),
-            SelectableText(
-              Content.email,
-              style: WriteStyles.body1TabletandMobile(context)
-                  .copyWith(overflow: TextOverflow.fade),
-            ),
-          ],
-        ),
-        GlobalVariables.spaceSmallest(),
-        Row(
-          children: [
-            const Icon(
-              Symbols.circle_circle,
-              color: Colors.green,
-            ),
-            GlobalVariables.spaceSmaller(isWidth: true),
-            Text(
-              Content.availability,
-              style: WriteStyles.body1TabletandMobile(context),
-            ),
-          ],
-        ),
-        GlobalVariables.spaceSmall(),
-        Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              onPressed: () async {
-                if (await canLaunchUrl(Content.githubLink)) {
-                  await launchUrl(Content.githubLink,
-                      mode: LaunchMode.externalApplication);
-                } else {
-                  throw 'Could not launch ${Content.githubLink}';
-                }
-              },
-              icon: const Icon(
-                SimpleIcons.github,
-                size: 25,
-              ),
-            ),
-            GlobalVariables.layoutSpaceMedium(
-                platformHeight: platformHeight, platformWidth: platformWidth),
-            IconButton(
-              onPressed: () async {
-                if (await canLaunchUrl(Content.linkedinLink)) {
-                  await launchUrl(Content.linkedinLink,
-                      mode: LaunchMode.externalApplication);
-                } else {
-                  throw 'Could not launch ${Content.linkedinLink}';
-                }
-              },
-              icon: const Icon(
-                Symbols.link_rounded,
-                size: 25,
-              ),
-            ),
+            _socialButton(context, Content.githubLink, SimpleIcons.github, 25),
+            const SizedBox(width: 30),
+            _socialButton(
+                context, Content.linkedinLink, Symbols.link_rounded, 25),
           ],
         )
       ],
     );
   }
-}
 
-class TabletHome extends StatelessWidget {
-  const TabletHome({
-    super.key,
-    required this.platformWidth,
-    required this.platformHeight,
-  });
+  Widget _buildDesktop(BuildContext context) {
+    return Row(
+      children: [
+        SizedBox(
+          width: context.screenWidth * 0.5,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(Content.introHeader, style: WriteStyles.header1(context)),
+              const SizedBox(height: 8),
+              Text(Content.introduction, style: WriteStyles.body1(context)),
+              const SizedBox(height: 30),
+              _infoRow(context, Icons.home_outlined, Content.location),
+              const SizedBox(height: 12),
+              _infoRow(context, Icons.email_outlined, Content.email,
+                  selectable: true),
+              const SizedBox(height: 12),
+              _infoRow(context, Icons.circle, Content.availability,
+                  color: Colors.green),
+              const SizedBox(height: 30),
+              Row(
+                children: [
+                  _socialButton(
+                      context, Content.githubLink, SimpleIcons.github, 40),
+                  const SizedBox(width: 20),
+                  _socialButton(
+                      context, Content.linkedinLink, Symbols.link_rounded, 40),
+                ],
+              )
+            ],
+          ),
+        ),
+        const SizedBox(width: 30),
+        Flexible(
+          flex: 2,
+          child: Align(
+            alignment: Alignment.topRight,
+            child: _profileImage(context, maxWidth: 0.3),
+          ),
+        )
+      ],
+    );
+  }
 
-  final double platformWidth;
-  final double platformHeight;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: GlobalVariables.mobilePadding,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                maxWidth: platformWidth * 0.6,
-                maxHeight: platformHeight * 0.45,
-              ),
-              child: Material(
-                shadowColor: Theme.of(context).colorScheme.secondary,
-                elevation: 5,
-                borderRadius: BorderRadius.circular(40),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(40),
-                  child: Image.asset(
-                    Content.profile,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          GlobalVariables.spaceSmall(),
-          Text(
-            Content.introHeader,
-            style: WriteStyles.header1Tablet(context),
-          ),
-          GlobalVariables.spaceSmallest(),
-          Text(
-            Content.introduction,
-            style: WriteStyles.body1TabletandMobile(context),
-          ),
-          GlobalVariables.spaceSmall(),
-          Row(
-            children: [
-              const Icon(Symbols.home_pin),
-              GlobalVariables.spaceSmaller(isWidth: true),
-              Text(
-                Content.location,
-                style: WriteStyles.body1TabletandMobile(context),
-              ),
-            ],
-          ),
-          GlobalVariables.spaceSmallest(),
-          Row(
-            children: [
-              const Icon(Symbols.email),
-              GlobalVariables.spaceSmaller(isWidth: true),
-              SelectableText(
-                Content.email,
-                style: WriteStyles.body1TabletandMobile(context),
-              ),
-            ],
-          ),
-          GlobalVariables.spaceSmallest(),
-          Row(
-            children: [
-              const Icon(
-                Symbols.circle_circle,
-                color: Colors.green,
-              ),
-              GlobalVariables.spaceSmaller(isWidth: true),
-              Text(
-                Content.availability,
-                style: WriteStyles.body1TabletandMobile(context),
-              ),
-            ],
-          ),
-          GlobalVariables.spaceSmall(),
-          Row(
-            children: [
-              IconButton(
-                onPressed: () async {
-                  if (await canLaunchUrl(Content.githubLink)) {
-                    await launchUrl(Content.githubLink,
-                        mode: LaunchMode.externalApplication);
-                  } else {
-                    throw 'Could not launch ${Content.githubLink}';
-                  }
-                },
-                icon: const Icon(SimpleIcons.github),
-                iconSize: 40,
-              ),
-              IconButton(
-                onPressed: () async {
-                  if (await canLaunchUrl(Content.linkedinLink)) {
-                    await launchUrl(Content.linkedinLink,
-                        mode: LaunchMode.externalApplication);
-                  } else {
-                    throw 'Could not launch ${Content.linkedinLink}';
-                  }
-                },
-                icon: const Icon(Symbols.link_rounded),
-                iconSize: 40,
-              ),
-            ],
-          )
-        ],
+  Widget _profileImage(BuildContext context, {double? maxWidth}) {
+    final width = maxWidth ?? 0.6;
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        maxWidth: context.screenWidth * width,
+        maxHeight: context.screenHeight * 0.9,
+      ),
+      child: Material(
+        shadowColor: Theme.of(context).colorScheme.secondary,
+        elevation: 5,
+        borderRadius: BorderRadius.circular(40),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(40),
+          child: Image.asset(Content.profile, fit: BoxFit.cover),
+        ),
       ),
     );
   }
-}
 
-// DESKTOP HOME
-class DesktopHome extends StatelessWidget {
-  final double platformWidth;
-  final double platformHeight;
-  const DesktopHome({
-    super.key,
-    required this.platformWidth,
-    required this.platformHeight,
-  });
+  Widget _infoRow(BuildContext context, IconData icon, String text,
+      {bool selectable = false, Color? color}) {
+    final widget = selectable
+        ? SelectableText(text, style: WriteStyles.body1(context))
+        : Text(text, style: WriteStyles.body1(context));
 
-  @override
-  Widget build(BuildContext context) {
     return Row(
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: platformWidth * 0.5,
-              child: Text(
-                Content.introHeader,
-                style: WriteStyles.header1Desktop(context),
-              ),
-            ),
-            SizedBox(
-              width: platformWidth * 0.5,
-              child: Text(
-                Content.introduction,
-                style: WriteStyles.body1Desktop(context),
-              ),
-            ),
-            GlobalVariables.layoutSpaceMedium(
-                platformHeight: platformHeight, platformWidth: platformWidth),
-            // GlobalVariables.spaceMedium(),
-            Row(
-              children: [
-                const Icon(Symbols.home_pin),
-                GlobalVariables.spaceSmaller(isWidth: true),
-                Text(
-                  Content.location,
-                  style: WriteStyles.body1Desktop(context),
-                ),
-              ],
-            ),
-            GlobalVariables.layoutSpaceSmaller(
-                platformHeight: platformHeight, platformWidth: platformWidth),
-            Row(
-              children: [
-                const Icon(Symbols.email),
-                GlobalVariables.spaceSmaller(isWidth: true),
-                SelectableText(
-                  Content.email,
-                  style: WriteStyles.body1Desktop(context),
-                ),
-              ],
-            ),
-            GlobalVariables.layoutSpaceSmaller(
-                platformHeight: platformHeight, platformWidth: platformWidth),
-            Row(
-              children: [
-                const Icon(
-                  Symbols.circle_circle,
-                  color: Colors.green,
-                ),
-                GlobalVariables.spaceSmaller(isWidth: true),
-                Text(
-                  Content.availability,
-                  style: WriteStyles.body1Desktop(context),
-                ),
-              ],
-            ),
-            GlobalVariables.layoutSpaceMedium(
-                platformHeight: platformHeight, platformWidth: platformWidth),
-            Row(
-              children: [
-                IconButton(
-                  onPressed: () async {
-                    if (await canLaunchUrl(Content.githubLink)) {
-                      await launchUrl(Content.githubLink,
-                          mode: LaunchMode.externalApplication);
-                    } else {
-                      throw 'Could not launch ${Content.githubLink}';
-                    }
-                  },
-                  icon: const Icon(SimpleIcons.github),
-                  iconSize: 40,
-                ),
-                IconButton(
-                  onPressed: () async {
-                    if (await canLaunchUrl(Content.linkedinLink)) {
-                      await launchUrl(Content.linkedinLink,
-                          mode: LaunchMode.externalApplication);
-                    } else {
-                      throw 'Could not launch ${Content.linkedinLink}';
-                    }
-                  },
-                  icon: const Icon(Symbols.link_rounded),
-                  iconSize: 40,
-                ),
-              ],
-            )
-          ],
-        ),
-        GlobalVariables.spaceMedium(isWidth: true),
-        Flexible(
-            flex: 2,
-            child: Align(
-              alignment: Alignment.topRight,
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxWidth: platformWidth * 0.3,
-                  // maxHeight: platformHeight * 0.45,
-                ),
-                child: Material(
-                  shadowColor: Theme.of(context).colorScheme.secondary,
-                  elevation: 5,
-                  borderRadius: BorderRadius.circular(40),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(40),
-                    child: Image.asset(
-                      Content.profile,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
-            ))
+        Icon(icon, color: color),
+        const SizedBox(width: 10),
+        Expanded(child: widget),
       ],
+    );
+  }
+
+  Widget _socialButton(
+      BuildContext context, Uri link, IconData icon, double size) {
+    return IconButton(
+      onPressed: () async {
+        if (await canLaunchUrl(link)) {
+          await launchUrl(link, mode: LaunchMode.externalApplication);
+        }
+      },
+      icon: Icon(icon, size: size),
     );
   }
 }

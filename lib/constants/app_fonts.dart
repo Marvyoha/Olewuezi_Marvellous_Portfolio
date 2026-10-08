@@ -1,95 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../core/responsive/responsive_extensions.dart';
+import '../core/responsive/responsive_value.dart';
 
 class WriteStyles {
-  static TextStyle header1Desktop(BuildContext context) {
+  static TextStyle header1(BuildContext context) {
+    final size = const ResponsiveVal<double>(mobile: 31, tablet: 43, desktop: 50).value(context);
+    final weight = context.isMobile ? FontWeight.w600 : FontWeight.w700;
     return GoogleFonts.inter(
       color: Theme.of(context).colorScheme.primary,
-      fontSize: 50,
-      fontWeight: FontWeight.w700,
+      fontSize: size,
+      fontWeight: weight,
     );
   }
 
-  static TextStyle header1Tablet(BuildContext context) {
+  static TextStyle header2(BuildContext context) {
+    final size = const ResponsiveVal<double>(mobile: 24, tablet: 24, desktop: 36).value(context);
     return GoogleFonts.inter(
       color: Theme.of(context).colorScheme.primary,
-      fontSize: 43,
-      fontWeight: FontWeight.w700,
-    );
-  }
-
-  // FOR MAIN HEADINGS (MOBILE)
-  static TextStyle header1Mobile(BuildContext context) {
-    return GoogleFonts.inter(
-      color: Theme.of(context).colorScheme.primary,
-      fontSize: 31,
+      fontSize: size,
       fontWeight: FontWeight.w600,
     );
   }
 
-  static TextStyle header2Desktop(BuildContext context) {
+  static TextStyle header3(BuildContext context) {
+    final size = const ResponsiveVal<double>(mobile: 18, tablet: 18, desktop: 30).value(context);
     return GoogleFonts.inter(
       color: Theme.of(context).colorScheme.primary,
-      fontSize: 36,
+      fontSize: size,
       fontWeight: FontWeight.w600,
     );
   }
 
-// FOR SUB HEADER WITHIN SECTIONS
-  static TextStyle header2TabletandMobile(BuildContext context) {
+  static TextStyle subtitle(BuildContext context) {
+    final size = const ResponsiveVal<double>(mobile: 18, tablet: 18, desktop: 20).value(context);
     return GoogleFonts.inter(
       color: Theme.of(context).colorScheme.primary,
-      fontSize: 24,
-      fontWeight: FontWeight.w600,
-    );
-  }
-
-  static TextStyle header3Desktop(BuildContext context) {
-    return GoogleFonts.inter(
-      color: Theme.of(context).colorScheme.primary,
-      fontSize: 30,
-      fontWeight: FontWeight.w600,
-    );
-  }
-
-  static TextStyle header3TabletandMobile(BuildContext context) {
-    return GoogleFonts.inter(
-      color: Theme.of(context).colorScheme.primary,
-      fontSize: 18,
-      fontWeight: FontWeight.w600,
-    );
-  }
-
-  static TextStyle subtitleDesktop(BuildContext context) {
-    return GoogleFonts.inter(
-      color: Theme.of(context).colorScheme.primary,
-      fontSize: 20,
+      fontSize: size,
       fontWeight: FontWeight.w400,
     );
   }
 
-  static TextStyle subtitleTabletandMobile(BuildContext context) {
-    return GoogleFonts.inter(
-      color: Theme.of(context).colorScheme.primary,
-      fontSize: 18,
-      fontWeight: FontWeight.w400,
-    );
-  }
-
-  static TextStyle body1Desktop(BuildContext context) {
+  static TextStyle body1(BuildContext context) {
+    final size = const ResponsiveVal<double>(mobile: 17, tablet: 17, desktop: 18).value(context);
+    final weight = context.isMobile ? FontWeight.w500 : FontWeight.w400;
     return GoogleFonts.inter(
       color: Theme.of(context).colorScheme.secondary,
-      fontSize: 18,
-      fontWeight: FontWeight.w400,
-    );
-  }
-
-  static TextStyle body1TabletandMobile(BuildContext context) {
-    return GoogleFonts.inter(
-      color: Theme.of(context).colorScheme.secondary,
-      fontSize: 17,
-      fontStyle: FontStyle.normal,
-      fontWeight: FontWeight.w500,
+      fontSize: size,
+      fontStyle: context.isMobile ? FontStyle.normal : FontStyle.normal,
+      fontWeight: weight,
     );
   }
 

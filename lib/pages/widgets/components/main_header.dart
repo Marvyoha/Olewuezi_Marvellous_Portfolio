@@ -1,40 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../../../../../constants/app_fonts.dart';
-import '../../../core/providers/layout_provider.dart';
-import '../../../constants/app_constants.dart';
+import 'package:my_portfolio_website/constants/app_fonts.dart';
+import 'package:my_portfolio_website/core/responsive/responsive_extensions.dart';
+import 'package:my_portfolio_website/core/responsive/responsive_value.dart';
 
 class MainHeader extends StatelessWidget {
   final String content;
-  final double platformWidth;
-  final double platformHeight;
   const MainHeader({
     super.key,
     required this.content,
-    required this.platformWidth,
-    required this.platformHeight,
   });
 
   @override
   Widget build(BuildContext context) {
-    LayoutProvider layoutProvider =
-        Provider.of<LayoutProvider>(context, listen: true);
-    TextStyle fontStyler() {
-      switch (layoutProvider.currentPlatform) {
-        case Platform.mobile:
-          return WriteStyles.header1Mobile(context);
-        case Platform.tablet:
-          return WriteStyles.header1Tablet(context);
-
-        default:
-          return WriteStyles.header1Desktop(context);
-      }
-    }
-
+    final indent = const ResponsiveVal<double>(mobile: 0.25, tablet: 0.25, desktop: 0.25).value(context);
+    
     return Column(
       children: [
-        Text(content, style: fontStyler()),
+        Text(content, style: WriteStyles.header1(context)),
         Stack(
           alignment: Alignment.bottomCenter,
           children: [
@@ -42,18 +24,17 @@ class MainHeader extends StatelessWidget {
               color: Theme.of(context).colorScheme.primary,
               thickness: 3,
               height: 1,
-              indent: platformWidth * 0.25,
-              endIndent: platformWidth * 0.25,
+              indent: context.screenWidth * indent,
+              endIndent: context.screenWidth * indent,
             ),
             Container(
               color: Theme.of(context).colorScheme.primary,
-              height: platformHeight * 0.02,
-              width: platformWidth * 0.05,
+              height: context.screenHeight * 0.02,
+              width: context.screenWidth * 0.05,
             ),
           ],
         ),
-        GlobalVariables.layoutSpaceLarge(
-            platformHeight: platformHeight, platformWidth: platformWidth),
+        SizedBox(height: context.screenHeight * 0.04),
       ],
     );
   }
