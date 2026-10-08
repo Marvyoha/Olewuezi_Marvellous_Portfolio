@@ -5,7 +5,7 @@ import 'package:my_portfolio_website/core/models/experience_model.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../constants/app_fonts.dart';
-import '../../../../../core/providers/layout_provider.dart';
+import '../../../core/providers/layout_provider.dart';
 
 class ExperienceWidget extends StatelessWidget {
   final ExperienceModel exp;

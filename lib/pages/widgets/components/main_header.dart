@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../constants/app_fonts.dart';
-import '../../../../../core/providers/layout_provider.dart';
+import '../../../core/providers/layout_provider.dart';
 import '../../../constants/app_constants.dart';
 
 class MainHeader extends StatelessWidget {

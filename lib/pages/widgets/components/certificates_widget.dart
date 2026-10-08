@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../constants/app_fonts.dart';
-import '../../../../../core/providers/layout_provider.dart';
+import '../../../core/providers/layout_provider.dart';
 
 class CertificatesWidget extends StatelessWidget {
   final CertificatesModel cert;

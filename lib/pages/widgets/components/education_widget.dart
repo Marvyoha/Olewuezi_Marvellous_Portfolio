@@ -6,7 +6,7 @@ import 'package:my_portfolio_website/pages/widgets/components/portfolio_divider.
 import 'package:provider/provider.dart';
 
 import '../../../../../constants/app_fonts.dart';
-import '../../../../../core/providers/layout_provider.dart';
+import '../../../core/providers/layout_provider.dart';
 
 class EducationWidget extends StatelessWidget {
   final EducationModel education;

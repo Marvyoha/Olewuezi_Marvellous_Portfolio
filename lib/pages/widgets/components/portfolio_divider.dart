@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../../../../constants/app_constants.dart';
 import '../../../../../constants/app_fonts.dart';
-import '../../../../../core/providers/layout_provider.dart';
+import '../../../core/providers/layout_provider.dart';
 
 class PortfolioDivider extends StatelessWidget {
   final double platformWidth;
