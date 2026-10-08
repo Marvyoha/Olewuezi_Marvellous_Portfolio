@@ -186,10 +186,10 @@ designs were both attractive and intuitive for the end-user.''',
   static String mindscribe2 = 'assets/mindscribe2.webp';
   static String mindscribe3 = 'assets/mindscribe3.webp';
   static String mindscribe4 = 'assets/mindscribe4.webp';
-  static String cifarlens1 = 'assets/CIFAR LENS1.webp';
-  static String cifarlens2 = 'assets/CIFAR LENS2.webp';
-  static String cifarlens3 = 'assets/CIFAR LENS3.webp';
-  static String cifarlens4 = 'assets/CIFAR LENS4.webp';
+  static String cifarlens1 = 'assets/CIFAR_lens1.webp';
+  static String cifarlens2 = 'assets/CIFAR_lens2.webp';
+  static String cifarlens3 = 'assets/CIFAR_lens3.webp';
+  static String cifarlens4 = 'assets/CIFAR_lens4.webp';
   static String kamp1 = 'assets/kamp1.webp';
   static String kamp2 = 'assets/kamp2.webp';
   static String kamp3 = 'assets/kamp3.webp';
