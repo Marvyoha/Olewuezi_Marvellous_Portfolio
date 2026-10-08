@@ -1,9 +1,10 @@
-import 'package:carbon_icons/carbon_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/symbols.dart';
 import 'package:my_portfolio_website/constants/app_constants.dart';
 import 'package:my_portfolio_website/constants/app_fonts.dart';
 import 'package:my_portfolio_website/constants/app_strings.dart';
 import 'package:provider/provider.dart';
+import 'package:simple_icons/simple_icons.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
@@ -87,7 +88,7 @@ class MobileHome extends StatelessWidget {
         GlobalVariables.spaceSmall(),
         Row(
           children: [
-            const Icon(CarbonIcons.location),
+            const Icon(Symbols.home_pin),
             GlobalVariables.spaceSmaller(isWidth: true),
             Text(
               Content.location,
@@ -98,7 +99,7 @@ class MobileHome extends StatelessWidget {
         GlobalVariables.spaceSmallest(),
         Row(
           children: [
-            const Icon(CarbonIcons.email),
+            const Icon(Symbols.email),
             GlobalVariables.spaceSmaller(isWidth: true),
             SelectableText(
               Content.email,
@@ -111,7 +112,7 @@ class MobileHome extends StatelessWidget {
         Row(
           children: [
             const Icon(
-              CarbonIcons.dot_mark,
+              Symbols.circle_circle,
               color: Colors.green,
             ),
             GlobalVariables.spaceSmaller(isWidth: true),
@@ -135,7 +136,7 @@ class MobileHome extends StatelessWidget {
                 }
               },
               icon: const Icon(
-                CarbonIcons.logo_github,
+                SimpleIcons.github,
                 size: 25,
               ),
             ),
@@ -151,7 +152,7 @@ class MobileHome extends StatelessWidget {
                 }
               },
               icon: const Icon(
-                CarbonIcons.logo_linkedin,
+                Symbols.link_rounded,
                 size: 25,
               ),
             ),
@@ -212,7 +213,7 @@ class TabletHome extends StatelessWidget {
           GlobalVariables.spaceSmall(),
           Row(
             children: [
-              const Icon(CarbonIcons.location),
+              const Icon(Symbols.home_pin),
               GlobalVariables.spaceSmaller(isWidth: true),
               Text(
                 Content.location,
@@ -223,7 +224,7 @@ class TabletHome extends StatelessWidget {
           GlobalVariables.spaceSmallest(),
           Row(
             children: [
-              const Icon(CarbonIcons.email),
+              const Icon(Symbols.email),
               GlobalVariables.spaceSmaller(isWidth: true),
               SelectableText(
                 Content.email,
@@ -235,7 +236,7 @@ class TabletHome extends StatelessWidget {
           Row(
             children: [
               const Icon(
-                CarbonIcons.dot_mark,
+                Symbols.circle_circle,
                 color: Colors.green,
               ),
               GlobalVariables.spaceSmaller(isWidth: true),
@@ -257,7 +258,7 @@ class TabletHome extends StatelessWidget {
                     throw 'Could not launch ${Content.githubLink}';
                   }
                 },
-                icon: const Icon(CarbonIcons.logo_github),
+                icon: const Icon(SimpleIcons.github),
                 iconSize: 40,
               ),
               IconButton(
@@ -269,7 +270,7 @@ class TabletHome extends StatelessWidget {
                     throw 'Could not launch ${Content.linkedinLink}';
                   }
                 },
-                icon: const Icon(CarbonIcons.logo_linkedin),
+                icon: const Icon(Symbols.link_rounded),
                 iconSize: 40,
               ),
             ],
@@ -316,7 +317,7 @@ class DesktopHome extends StatelessWidget {
             // GlobalVariables.spaceMedium(),
             Row(
               children: [
-                const Icon(CarbonIcons.location),
+                const Icon(Symbols.home_pin),
                 GlobalVariables.spaceSmaller(isWidth: true),
                 Text(
                   Content.location,
@@ -328,7 +329,7 @@ class DesktopHome extends StatelessWidget {
                 platformHeight: platformHeight, platformWidth: platformWidth),
             Row(
               children: [
-                const Icon(CarbonIcons.email),
+                const Icon(Symbols.email),
                 GlobalVariables.spaceSmaller(isWidth: true),
                 SelectableText(
                   Content.email,
@@ -341,7 +342,7 @@ class DesktopHome extends StatelessWidget {
             Row(
               children: [
                 const Icon(
-                  CarbonIcons.dot_mark,
+                  Symbols.circle_circle,
                   color: Colors.green,
                 ),
                 GlobalVariables.spaceSmaller(isWidth: true),
@@ -364,7 +365,7 @@ class DesktopHome extends StatelessWidget {
                       throw 'Could not launch ${Content.githubLink}';
                     }
                   },
-                  icon: const Icon(CarbonIcons.logo_github),
+                  icon: const Icon(SimpleIcons.github),
                   iconSize: 40,
                 ),
                 IconButton(
@@ -376,7 +377,7 @@ class DesktopHome extends StatelessWidget {
                       throw 'Could not launch ${Content.linkedinLink}';
                     }
                   },
-                  icon: const Icon(CarbonIcons.logo_linkedin),
+                  icon: const Icon(Symbols.link_rounded),
                   iconSize: 40,
                 ),
               ],

@@ -1,5 +1,5 @@
+import 'package:material_symbols_icons/symbols.dart';
 import 'package:web/web.dart' as web;
-import 'package:carbon_icons/carbon_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/pages/widgets/get_in_touch_content.dart';
 import 'package:provider/provider.dart';
@@ -64,8 +64,8 @@ class _HomepageTabletState extends State<HomepageTablet> {
                     children: [
                       IconButton(
                         icon: Icon(themeProvider.isLight
-                            ? CarbonIcons.sun
-                            : CarbonIcons.moon),
+                            ? Symbols.sunny
+                            : Symbols.moon_stars),
                         onPressed: () {
                           Provider.of<ThemeProvider>(context, listen: false)
                               .toggleTheme(context);

@@ -1,4 +1,4 @@
-import 'package:dev_icons/dev_icons.dart';
+import 'package:simple_icons/simple_icons.dart';
 
 import '../core/models/certificates_model.dart';
 import '../core/models/education_model.dart';
@@ -12,13 +12,25 @@ class Content {
   static String phoneNumber = '08074307345';
   static String email = 'olewuezimarvellous@gmail.com';
   static String introduction =
-      "I am a mobile app developer specializing in Flutter development. With an intermediate level of expertise, I've honed my skills in creating cross-platform mobile applications that run seamlessly on both iOS and Android devices. My passion for mobile technology and user-centric design drives me to continuously improve my Flutter proficiency and stay updated with the latest trends in app development.";
+      "I'm a Software Engineer and Computer Science graduate of Caleb University, bridging production mobile apps (Flutter/Dart) and efficient on-device machine learning. I take deep learning models, from Computer Vision architectures to Large Language Models, and optimize them for low-latency, privacy-first local execution on mobile and edge hardware. Built on a solid foundation in Java, Python, and C++, my work turns ideas into cross-platform experiences where creativity meets functionality.";
   static String introHeader = "Hi, I'm Olewuezi Marvellous";
   static String location = "Lagos,Nigeria";
   static String availability = 'Available for new projects';
   static String aboutMeIntro = 'Curious about me? Here you have it:';
   static String aboutMe =
-      '''I'm Olewuezi Marvellous, a passionate and results-driven Mobile Developer based in Lagos, Nigeria. With a strong foundation in Computer Science and a keen interest in mobile application development, I specialize in creating innovative and user-friendly apps using Flutter and Dart.\n\nAs a recent graduate from Caleb University with a Bachelor's degree in Computer Science (CGPA: 4.04), I've honed my skills in various programming languages and technologies. My expertise spans Dart, Flutter, Java, Python, C++, and Firebase, allowing me to develop robust and efficient cross-platform mobile applications.\n\nI pride myself on writing clean, readable, and testable code. My approach to development is characterized by analytical thinking, problem-solving skills, and meticulous attention to detail. I thrive both independently and in team settings, always striving to apply the highest quality standards to create, grow, and maintain mobile app platforms.\n\nI have experience working with RESTful APIs. My knowledge extends to Android app development, and I'm well-versed in Firebase for backend solutions.\n\nContinuously eager to learn and grow, I've supplemented my formal education with various certifications from Google, including courses in Python, Cloud Computing, and Digital Marketing.\n\nI'm excited about the ever-evolving world of mobile technology and am committed to staying at the forefront of industry trends. My goal is to contribute my skills and passion to creating innovative mobile solutions that make a positive impact on users' lives.''';
+      // '''I'm Olewuezi Marvellous, a passionate and results-driven Mobile Developer based in Lagos, Nigeria. With a strong foundation in Computer Science and a keen interest in mobile application development, I specialize in creating innovative and user-friendly apps using Flutter and Dart.\n\nAs a recent graduate from Caleb University with a Bachelor's degree in Computer Science (CGPA: 4.04), I've honed my skills in various programming languages and technologies. My expertise spans Dart, Flutter, Java, Python, C++, and Firebase, allowing me to develop robust and efficient cross-platform mobile applications.\n\nI pride myself on writing clean, readable, and testable code. My approach to development is characterized by analytical thinking, problem-solving skills, and meticulous attention to detail. I thrive both independently and in team settings, always striving to apply the highest quality standards to create, grow, and maintain mobile app platforms.\n\nI have experience working with RESTful APIs. My knowledge extends to Android app development, and I'm well-versed in Firebase for backend solutions.\n\nContinuously eager to learn and grow, I've supplemented my formal education with various certifications from Google, including courses in Python, Cloud Computing, and Digital Marketing.\n\nI'm excited about the ever-evolving world of mobile technology and am committed to staying at the forefront of industry trends. My goal is to contribute my skills and passion to creating innovative mobile solutions that make a positive impact on users' lives.''';
+      '''
+I'm Olewuezi Marvellous, a passionate Application Developer and On-Device AI/ML Researcher based in Lagos, Nigeria. With a strong foundation in Computer Science, I specialize in bridging production mobile development using Flutter and Dart with efficient, privacy-first on-device machine learning and LLM integration.
+
+Holding a Second Class Upper Bachelor's degree in Computer Science from Caleb University (CGPA: 4.1/5.0), I have expanded my technical toolkit across Dart, Flutter, Python, PyTorch, C++, Java, and Firebase. My work spans the full spectrum of building robust cross-platform applications and optimizing deep learning models for edge deployment.
+
+I pride myself on clean architecture, analytical rigor, and writing performant, testable code. My recent focus centers on model compression (INT8 post-training quantization, PyTorch ➔ ONNX ➔ TFLite) and building intelligent software—from zero-latency vision apps like CIFAR_Lens to smart LLM reflection tools like Mindscribe.
+
+My engineering experience encompasses RESTful APIs, local SQLite databases, secure key management, and enterprise solutions like AI-driven Pharmacy POS & Inventory systems. I am well-versed in Android development, Desktop development, Firebase backends, and UI/UX workflows in Figma.
+
+Continuously eager to push technical boundaries, I supplement my formal education with certifications from Google and IBM while also having hands-on ML research—rigorously advancing my expertise in edge compute, tensor optimization, and generative AI systems.
+
+Driven by the future of mobile intelligence, I am committed to staying at the forefront of industry trends. My goal is to leverage my skills in application development and on-device machine learning to create innovative, impactful solutions that run seamlessly on edge hardware.''';
 
 // CREDENTIALS
   static final Uri cvLink = Uri.parse(
@@ -28,7 +40,7 @@ class Content {
   //     'https://drive.google.com/file/d/17tkOyPl30fP3-muALqLrhkuSAEp2klhn/view?usp=drive_link');
   static final Uri githubLink = Uri.parse('https://github.com/Marvyoha');
   static final Uri linkedinLink =
-      Uri.parse('https://www.linkedin.com/in/marvellous-olewuezi-9a9244321/');
+      Uri.parse('https://www.linkedin.com/in/Olewuezi-Marvellous/');
   static final Uri emailLink = Uri.parse('olewuezimarvellous@gmail.com');
 
 // CERTIFICATES
@@ -129,13 +141,19 @@ designs were both attractive and intuitive for the end-user.''',
 
 // SKILLS CONTENT (AUTOMATIC RENDERING)
   static List<SkillsModel> skillsList = [
-    SkillsModel(icon: DevIcons.dartPlain, skill: 'Dart'),
-    SkillsModel(icon: DevIcons.flutterPlain, skill: 'Flutter'),
-    SkillsModel(icon: DevIcons.javaPlain, skill: 'Java'),
-    SkillsModel(icon: DevIcons.pythonPlain, skill: 'Python'),
-    SkillsModel(icon: DevIcons.cplusplusPlain, skill: 'C++'),
-    SkillsModel(icon: DevIcons.firebasePlain, skill: 'Firebase'),
-    SkillsModel(icon: DevIcons.figmaPlain, skill: 'Figma')
+    SkillsModel(icon: SimpleIcons.dart, skill: 'Dart'),
+    SkillsModel(icon: SimpleIcons.flutter, skill: 'Flutter'),
+    SkillsModel(icon: SimpleIcons.openjdk, skill: 'Java'),
+    SkillsModel(icon: SimpleIcons.python, skill: 'Python'),
+    SkillsModel(icon: SimpleIcons.cplusplus, skill: 'C++'),
+    SkillsModel(icon: SimpleIcons.docker, skill: 'Docker'),
+    SkillsModel(icon: SimpleIcons.git, skill: 'Git'),
+    SkillsModel(icon: SimpleIcons.mysql, skill: 'MySQL'),
+    SkillsModel(icon: SimpleIcons.sqlite, skill: 'SQLite'),
+    SkillsModel(icon: SimpleIcons.pandas, skill: 'Pandas'),
+    SkillsModel(icon: SimpleIcons.numpy, skill: 'NumPy'),
+    SkillsModel(icon: SimpleIcons.pytorch, skill: 'PyTorch'),
+    SkillsModel(icon: SimpleIcons.tensorflow, skill: 'TensorFlow'),
   ];
 
 // PROJECTS CONTENT (AUTOMATIC RENDERING)

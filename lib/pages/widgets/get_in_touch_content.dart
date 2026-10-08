@@ -1,5 +1,5 @@
-import 'package:carbon_icons/carbon_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/symbols.dart';
 import 'package:my_portfolio_website/constants/app_strings.dart';
 import 'package:provider/provider.dart';
 
@@ -64,7 +64,7 @@ class MobileGetInTouch extends StatelessWidget {
       GlobalVariables.layoutSpaceMedium(
           platformHeight: platformHeight, platformWidth: platformWidth),
       Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-        const Icon(CarbonIcons.email),
+        const Icon(Symbols.email),
         GlobalVariables.layoutSpaceSmaller(
             platformHeight: platformHeight,
             platformWidth: platformWidth,
@@ -79,7 +79,7 @@ class MobileGetInTouch extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(CarbonIcons.phone),
+          const Icon(Symbols.phone),
           GlobalVariables.layoutSpaceSmaller(
               platformHeight: platformHeight,
               platformWidth: platformWidth,
@@ -123,7 +123,7 @@ class TabletGetInTouch extends StatelessWidget {
       GlobalVariables.layoutSpaceMedium(
           platformHeight: platformHeight, platformWidth: platformWidth),
       Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-        const Icon(CarbonIcons.email),
+        const Icon(Symbols.email),
         GlobalVariables.layoutSpaceSmaller(
             platformHeight: platformHeight,
             platformWidth: platformWidth,
@@ -138,7 +138,7 @@ class TabletGetInTouch extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(CarbonIcons.phone),
+          const Icon(Symbols.phone),
           GlobalVariables.layoutSpaceSmaller(
               platformHeight: platformHeight,
               platformWidth: platformWidth,
@@ -182,7 +182,7 @@ class DesktopGetInTouch extends StatelessWidget {
       GlobalVariables.layoutSpaceMedium(
           platformHeight: platformHeight, platformWidth: platformWidth),
       Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-        const Icon(CarbonIcons.email),
+        const Icon(Symbols.email),
         GlobalVariables.layoutSpaceSmaller(
             platformHeight: platformHeight,
             platformWidth: platformWidth,
@@ -197,7 +197,7 @@ class DesktopGetInTouch extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(CarbonIcons.phone),
+          const Icon(Symbols.phone),
           GlobalVariables.layoutSpaceSmaller(
               platformHeight: platformHeight,
               platformWidth: platformWidth,

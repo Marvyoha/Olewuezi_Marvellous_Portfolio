@@ -1,8 +1,9 @@
-import 'package:carbon_icons/carbon_icons.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/symbols.dart';
 import 'package:my_portfolio_website/core/models/projects_model.dart';
 import 'package:provider/provider.dart';
+import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../constants/app_constants.dart';
@@ -140,7 +141,7 @@ class ProjectWidget extends StatelessWidget {
                                                         .colorScheme
                                                         .surface)),
                                         Icon(
-                                          CarbonIcons.logo_github,
+                                          SimpleIcons.github,
                                           color: Theme.of(context)
                                               .colorScheme
                                               .surface,
@@ -184,7 +185,7 @@ class ProjectWidget extends StatelessWidget {
                                                         .colorScheme
                                                         .surface)),
                                         Icon(
-                                          CarbonIcons.store,
+                                          Symbols.store,
                                           color: Theme.of(context)
                                               .colorScheme
                                               .surface,
@@ -307,7 +308,7 @@ class ProjectWidget extends StatelessWidget {
                                                         .colorScheme
                                                         .surface)),
                                         Icon(
-                                          CarbonIcons.logo_github,
+                                          SimpleIcons.github,
                                           color: Theme.of(context)
                                               .colorScheme
                                               .surface,
@@ -351,7 +352,7 @@ class ProjectWidget extends StatelessWidget {
                                                         .colorScheme
                                                         .surface)),
                                         Icon(
-                                          CarbonIcons.store,
+                                          Symbols.store,
                                           color: Theme.of(context)
                                               .colorScheme
                                               .surface,
@@ -460,7 +461,7 @@ class ProjectWidget extends StatelessWidget {
                                                           .colorScheme
                                                           .surface)),
                                           Icon(
-                                            CarbonIcons.logo_github,
+                                            SimpleIcons.github,
                                             color: Theme.of(context)
                                                 .colorScheme
                                                 .surface,
@@ -504,7 +505,7 @@ class ProjectWidget extends StatelessWidget {
                                                           .colorScheme
                                                           .surface)),
                                           Icon(
-                                            CarbonIcons.store,
+                                            Symbols.store,
                                             color: Theme.of(context)
                                                 .colorScheme
                                                 .surface,
