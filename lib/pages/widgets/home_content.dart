@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
-import 'package:my_portfolio_website/constants/app_fonts.dart';
-import 'package:my_portfolio_website/constants/app_strings.dart';
+import 'package:my_portfolio_website/core/constants/app_fonts.dart';
+import 'package:my_portfolio_website/core/constants/app_strings.dart';
 import 'package:my_portfolio_website/core/responsive/responsive_extensions.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher.dart';

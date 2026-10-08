@@ -4,7 +4,7 @@ import 'package:my_portfolio_website/pages/widgets/components/experience_widget.
 import 'package:my_portfolio_website/pages/widgets/components/main_header.dart';
 import 'components/education_widget.dart';
 import 'components/section_header.dart';
-import '../../constants/app_strings.dart';
+import '../../core/constants/app_strings.dart';
 import '../../core/responsive/responsive_extensions.dart';
 import 'package:my_portfolio_website/pages/widgets/components/portfolio_divider.dart';
 
@@ -36,11 +36,11 @@ class QualificationsContent extends StatelessWidget {
         const SectionHeader(content: 'Education'),
         const SizedBox(height: 20),
         ...Content.educationList.map((edu) => Column(
-          children: [
-            EducationWidget(education: edu),
-            const SizedBox(height: 20),
-          ],
-        )),
+              children: [
+                EducationWidget(education: edu),
+                const SizedBox(height: 20),
+              ],
+            )),
       ],
     );
   }
@@ -50,6 +50,7 @@ class QualificationsContent extends StatelessWidget {
       children: [
         const SectionHeader(content: 'Certificates'),
         const SizedBox(height: 20),
+        if (context.isDesktop) const SizedBox(height: 24),
         if (context.isDesktop)
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,34 +58,42 @@ class QualificationsContent extends StatelessWidget {
               Expanded(
                 child: Column(
                   children: Content.certificatesList
-                    .asMap()
-                    .entries
-                    .where((e) => e.key == 0 || e.key % 2 == 0)
-                    .map((e) => Column(children: [CertificatesWidget(cert: e.value), const SizedBox(height: 20)]))
-                    .toList(),
+                      .asMap()
+                      .entries
+                      .where((e) => e.key == 0 || e.key % 2 == 0)
+                      .map((e) => Column(children: [
+                            CertificatesWidget(cert: e.value),
+                            const SizedBox(height: 20)
+                          ]))
+                      .toList(),
                 ),
               ),
               const SizedBox(width: 20),
               Expanded(
                 child: Column(
                   children: Content.certificatesList
-                    .asMap()
-                    .entries
-                    .where((e) => e.key % 2 != 0)
-                    .map((e) => Column(children: [CertificatesWidget(cert: e.value), const SizedBox(height: 20)]))
-                    .toList(),
+                      .asMap()
+                      .entries
+                      .where((e) => e.key % 2 != 0)
+                      .map((e) => Column(children: [
+                            CertificatesWidget(cert: e.value),
+                            const SizedBox(height: 20)
+                          ]))
+                      .toList(),
                 ),
               ),
             ],
           )
         else
           Column(
-            children: Content.certificatesList.map((cert) => Column(
-              children: [
-                CertificatesWidget(cert: cert),
-                const SizedBox(height: 20),
-              ],
-            )).toList(),
+            children: Content.certificatesList
+                .map((cert) => Column(
+                      children: [
+                        CertificatesWidget(cert: cert),
+                        const SizedBox(height: 20),
+                      ],
+                    ))
+                .toList(),
           ),
       ],
     );
@@ -96,11 +105,11 @@ class QualificationsContent extends StatelessWidget {
         const SectionHeader(content: 'Experience'),
         const SizedBox(height: 20),
         ...Content.experienceList.map((exp) => Column(
-          children: [
-            ExperienceWidget(exp: exp),
-            const SizedBox(height: 20),
-          ],
-        )),
+              children: [
+                ExperienceWidget(exp: exp),
+                const SizedBox(height: 20),
+              ],
+            )),
       ],
     );
   }

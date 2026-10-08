@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_website/constants/app_fonts.dart';
+import 'package:my_portfolio_website/core/constants/app_fonts.dart';
 
 class SectionHeader extends StatelessWidget {
   final String content;

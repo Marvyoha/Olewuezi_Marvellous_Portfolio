@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_website/constants/app_fonts.dart';
+import 'package:my_portfolio_website/core/constants/app_fonts.dart';
 import 'package:my_portfolio_website/core/responsive/responsive_extensions.dart';
 import 'package:my_portfolio_website/core/responsive/responsive_value.dart';
 
@@ -12,8 +12,10 @@ class MainHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final indent = const ResponsiveVal<double>(mobile: 0.25, tablet: 0.25, desktop: 0.25).value(context);
-    
+    final indent =
+        const ResponsiveVal<double>(mobile: 0.25, tablet: 0.25, desktop: 0.25)
+            .value(context);
+
     return Column(
       children: [
         Text(content, style: WriteStyles.header1(context)),

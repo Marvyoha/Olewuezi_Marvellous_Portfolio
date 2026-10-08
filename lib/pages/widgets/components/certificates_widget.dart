@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/core/models/certificates_model.dart';
 import 'package:my_portfolio_website/core/responsive/responsive_extensions.dart';
-import 'package:my_portfolio_website/constants/app_fonts.dart';
+import 'package:my_portfolio_website/core/constants/app_fonts.dart';
 import 'package:my_portfolio_website/pages/widgets/components/portfolio_divider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -37,7 +37,7 @@ class CertificatesWidget extends StatelessWidget {
             ],
           ),
         const SizedBox(height: 10),
-        const PortfolioDivider(),
+        if (!context.isDesktop) const PortfolioDivider(),
       ],
     );
   }

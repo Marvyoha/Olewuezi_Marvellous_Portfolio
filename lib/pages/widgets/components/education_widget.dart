@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_website/constants/app_fonts.dart';
+import 'package:my_portfolio_website/core/constants/app_fonts.dart';
 import 'package:my_portfolio_website/core/models/education_model.dart';
 import 'package:my_portfolio_website/core/responsive/responsive_extensions.dart';
 import 'package:my_portfolio_website/pages/widgets/components/portfolio_divider.dart';
@@ -25,10 +25,20 @@ class EducationWidget extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(width: context.screenWidth * 0.6, child: Text(education.degree, style: WriteStyles.subtitle(context))),
-                  SizedBox(width: context.screenWidth * 0.2, child: Text(education.school, style: WriteStyles.body2(context).copyWith(fontWeight: FontWeight.bold))),
+                  SizedBox(
+                      width: context.screenWidth * 0.6,
+                      child: Text(education.degree,
+                          style: WriteStyles.subtitle(context))),
+                  SizedBox(
+                      width: context.screenWidth * 0.2,
+                      child: Text(education.school,
+                          style: WriteStyles.body2(context)
+                              .copyWith(fontWeight: FontWeight.bold))),
                   Text(education.timeRange, style: WriteStyles.body2(context)),
-                  SizedBox(width: context.screenWidth * 0.2, child: Text(education.location, style: WriteStyles.body2(context))),
+                  SizedBox(
+                      width: context.screenWidth * 0.2,
+                      child: Text(education.location,
+                          style: WriteStyles.body2(context))),
                 ],
               )
             ],
@@ -40,12 +50,17 @@ class EducationWidget extends StatelessWidget {
 
     return Column(
       children: [
-        SizedBox(height: 100, width: 100, child: Image.asset(education.image, fit: BoxFit.fill)),
+        SizedBox(
+            height: 100,
+            width: 100,
+            child: Image.asset(education.image, fit: BoxFit.fill)),
         const SizedBox(height: 10),
         Column(
           children: [
             Text(education.degree, style: WriteStyles.subtitle(context)),
-            Text(education.school, style: WriteStyles.subtitle(context).copyWith(fontWeight: FontWeight.bold)),
+            Text(education.school,
+                style: WriteStyles.subtitle(context)
+                    .copyWith(fontWeight: FontWeight.bold)),
             Text(education.timeRange, style: WriteStyles.body2(context)),
             Text(education.location, style: WriteStyles.body2(context)),
           ],
@@ -54,5 +69,5 @@ class EducationWidget extends StatelessWidget {
         const PortfolioDivider(),
       ],
     );
-}
+  }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../constants/app_colors.dart';
+import '../constants/app_colors.dart';
 
 class ThemeProvider extends ChangeNotifier {
   bool _isLight = true;
@@ -22,12 +22,10 @@ class ThemeProvider extends ChangeNotifier {
     _themeMode = _themeMode == lightMode ? darkMode : lightMode;
     _isLight = _themeMode == lightMode ? true : false;
     notifyListeners();
-  // Navigator.pushAndRemoveUntil(
-  //     context,
-  //     MaterialPageRoute(builder: (context) =>const OnBoarding()),
-  //     (route) => false,
-  //   );
+    // Navigator.pushAndRemoveUntil(
+    //     context,
+    //     MaterialPageRoute(builder: (context) =>const OnBoarding()),
+    //     (route) => false,
+    //   );
   }
-
- 
 }

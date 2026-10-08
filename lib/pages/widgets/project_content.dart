@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/pages/widgets/components/project_widget.dart';
-import '../../constants/app_strings.dart';
+import '../../core/constants/app_strings.dart';
 import '../../core/responsive/responsive_spacing.dart';
 import 'components/main_header.dart';
 

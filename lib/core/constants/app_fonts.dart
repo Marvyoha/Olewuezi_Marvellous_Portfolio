@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../core/responsive/responsive_extensions.dart';
-import '../core/responsive/responsive_value.dart';
+import '../responsive/responsive_extensions.dart';
+import '../responsive/responsive_value.dart';
 
 class WriteStyles {
   static TextStyle header1(BuildContext context) {
-    final size = const ResponsiveVal<double>(mobile: 31, tablet: 43, desktop: 50).value(context);
+    final size =
+        const ResponsiveVal<double>(mobile: 31, tablet: 43, desktop: 50)
+            .value(context);
     final weight = context.isMobile ? FontWeight.w600 : FontWeight.w700;
     return GoogleFonts.inter(
       color: Theme.of(context).colorScheme.primary,
@@ -15,7 +17,9 @@ class WriteStyles {
   }
 
   static TextStyle header2(BuildContext context) {
-    final size = const ResponsiveVal<double>(mobile: 24, tablet: 24, desktop: 36).value(context);
+    final size =
+        const ResponsiveVal<double>(mobile: 24, tablet: 24, desktop: 36)
+            .value(context);
     return GoogleFonts.inter(
       color: Theme.of(context).colorScheme.primary,
       fontSize: size,
@@ -24,7 +28,9 @@ class WriteStyles {
   }
 
   static TextStyle header3(BuildContext context) {
-    final size = const ResponsiveVal<double>(mobile: 18, tablet: 18, desktop: 30).value(context);
+    final size =
+        const ResponsiveVal<double>(mobile: 18, tablet: 18, desktop: 30)
+            .value(context);
     return GoogleFonts.inter(
       color: Theme.of(context).colorScheme.primary,
       fontSize: size,
@@ -33,7 +39,9 @@ class WriteStyles {
   }
 
   static TextStyle subtitle(BuildContext context) {
-    final size = const ResponsiveVal<double>(mobile: 18, tablet: 18, desktop: 20).value(context);
+    final size =
+        const ResponsiveVal<double>(mobile: 18, tablet: 18, desktop: 20)
+            .value(context);
     return GoogleFonts.inter(
       color: Theme.of(context).colorScheme.primary,
       fontSize: size,
@@ -42,7 +50,9 @@ class WriteStyles {
   }
 
   static TextStyle body1(BuildContext context) {
-    final size = const ResponsiveVal<double>(mobile: 17, tablet: 17, desktop: 18).value(context);
+    final size =
+        const ResponsiveVal<double>(mobile: 17, tablet: 17, desktop: 18)
+            .value(context);
     final weight = context.isMobile ? FontWeight.w500 : FontWeight.w400;
     return GoogleFonts.inter(
       color: Theme.of(context).colorScheme.secondary,

@@ -1,7 +1,7 @@
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_website/constants/app_fonts.dart';
-import 'package:my_portfolio_website/constants/app_strings.dart';
+import 'package:my_portfolio_website/core/constants/app_fonts.dart';
+import 'package:my_portfolio_website/core/constants/app_strings.dart';
 import 'package:my_portfolio_website/core/responsive/responsive_extensions.dart';
 import 'components/main_header.dart';
 

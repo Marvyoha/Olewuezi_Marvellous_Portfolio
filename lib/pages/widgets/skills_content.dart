@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../constants/app_strings.dart';
+import '../../core/constants/app_strings.dart';
 import 'package:my_portfolio_website/core/responsive/responsive_extensions.dart';
 import 'components/main_header.dart';
 import 'components/skills_widget.dart';

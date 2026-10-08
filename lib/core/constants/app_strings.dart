@@ -1,10 +1,10 @@
 import 'package:simple_icons/simple_icons.dart';
 
-import '../core/models/certificates_model.dart';
-import '../core/models/education_model.dart';
-import '../core/models/experience_model.dart';
-import '../core/models/projects_model.dart';
-import '../core/models/skills_model.dart';
+import '../models/certificates_model.dart';
+import '../models/education_model.dart';
+import '../models/experience_model.dart';
+import '../models/projects_model.dart';
+import '../models/skills_model.dart';
 
 class Content {
   //INFO
@@ -14,7 +14,7 @@ class Content {
   static String introduction =
       "I'm a Software Engineer and Computer Science graduate of Caleb University, bridging production mobile apps (Flutter/Dart) and efficient on-device machine learning. I take deep learning models, from Computer Vision architectures to Large Language Models, and optimize them for low-latency, privacy-first local execution on mobile and edge hardware. Built on a solid foundation in Java, Python, and C++, my work turns ideas into cross-platform experiences where creativity meets functionality.";
   static String introHeader = "Hi, I'm Olewuezi Marvellous";
-  static String location = "Lagos,Nigeria";
+  static String location = "Lagos, Nigeria";
   static String availability = 'Available for new projects';
   static String aboutMeIntro = 'Curious about me? Here you have it:';
   static String aboutMe =
@@ -56,14 +56,15 @@ Driven by the future of mobile intelligence, I am committed to staying at the fo
       'https://drive.google.com/file/d/1c5S3F_rr6sbxZLVLrId9qoEJIDed0p74/view?usp=drive_link');
 
 // IMAGES
-  static String profile = 'lib/assets/profile.webp';
-  static String profile2 = 'lib/assets/profile2.webp';
-  static String cmsLogo = 'lib/assets/cms_logo.webp';
-  static String calebLogo = 'lib/assets/caleb_uni_logo.webp';
-  static String googleLogo = 'lib/assets/google_logo.webp';
-  static String ibmLogo = 'lib/assets/ibm_logo.webp';
-  static String exolveTechLogo = 'lib/assets/exolve_tech_logo.webp';
-  static String technocratLogo = 'lib/assets/technocrat_logo.webp';
+  static String profile = 'assets/profile.webp';
+  static String profile2 = 'assets/profile2.webp';
+  static String cmsLogo = 'assets/cms_logo.webp';
+  static String calebLogo = 'assets/caleb_uni_logo.webp';
+  static String googleLogo = 'assets/google_logo.webp';
+  static String ibmLogo = 'assets/ibm_logo.webp';
+  static String exolveTechLogo = 'assets/exolve_tech_logo.webp';
+  static String technocratLogo = 'assets/technocrat_logo.webp';
+  static String josfredLogo = 'assets/josfred_logo.webp';
 
   // QUALIFICATIONS CONTENT ( AUTOMATIC RENDERING )
   static List<EducationModel> educationList = [
@@ -86,8 +87,8 @@ Driven by the future of mobile intelligence, I am committed to staying at the fo
         companyName: 'Exolve Technologies Ltd',
         image: Content.exolveTechLogo,
         jobTitle: 'Mobile App Developer Intern',
-        jobDescription:
-            '''• Collaborated with senior developers to design, develop, and
+        jobDescription: '''
+• Collaborated with senior developers to design, develop, and
 maintain mobile applications for both Android and iOS
 platforms.
 • Conducted thorough testing on new applications, identifying
@@ -102,13 +103,25 @@ designs were both attractive and intuitive for the end-user.''',
         companyName: 'Technocrat Consult and IT Systems Ltd',
         image: Content.technocratLogo,
         jobTitle: 'Mobile App Developer',
-        jobDescription:
-            '''• Implementing QR code scanning functionality for deposits and withdrawals
+        jobDescription: '''
+• Implementing QR code scanning functionality for deposits and withdrawals
 • Developing virtual card features with secure transaction handling
 • Working on NFC integration for contactless payment capabilities
 • Building responsive and intuitive UI components that bridged frontend design with backend services
 • Ensuring smooth API integration and data flow across the application.''',
         timeRange: '02/2025 - 12/2025'),
+    ExperienceModel(
+        companyName: 'Josfred International Ltd',
+        image: Content.josfredLogo,
+        jobTitle: 'IT Consultant / Flutter Developer',
+        jobDescription: '''
+• Architecting and building PharmaAI, a cross-platform desktop POS and inventory system in Flutter/Dart, replacing manual stock and sales tracking across the pharmacy.
+• Built the POS module: barcode scanning, split payments (cash/card/transfer), returns/refunds, thermal receipt printing, and shift close-out reports.
+• Implemented batch and expiry management with FEFO dispensing, low-stock and near-expiry alerts, and full stock-adjustment audit trails.
+• Integrated an AI-assisted drug interaction and allergy checker to flag unsafe combinations at dispensing, improving patient safety.
+• Designed role-based access control (Admin, Pharmacist, Cashier, Store Manager) with permissions enforced at the data layer.
+• Delivered procurement and reporting: purchase orders, supplier tracking, sales/profit dashboards, and PDF/CSV exports.''',
+        timeRange: '02/2026 - Present'),
   ];
 
   static List<CertificatesModel> certificatesList = [
@@ -157,23 +170,66 @@ designs were both attractive and intuitive for the end-user.''',
   ];
 
 // PROJECTS CONTENT (AUTOMATIC RENDERING)
-  static String soleSeekers1 = 'lib/assets/soleSeekers1.webp';
-  static String soleSeekers2 = 'lib/assets/soleSeekers2.webp';
-  static String soleSeekers3 = 'lib/assets/soleSeekers3.webp';
-  static String soleSeekers4 = 'lib/assets/soleSeekers4.webp';
-  static String carcare1 = 'lib/assets/carcare1.webp';
-  static String carcare2 = 'lib/assets/carcare2.webp';
-  static String carcare3 = 'lib/assets/carcare3.webp';
-  static String carcare4 = 'lib/assets/carcare4.webp';
-  static String cosmic1 = 'lib/assets/cosmic1.webp';
-  static String cosmic2 = 'lib/assets/cosmic2.webp';
-  static String cosmic3 = 'lib/assets/cosmic3.webp';
-  static String cosmic4 = 'lib/assets/cosmic4.webp';
-  static String kamp1 = 'lib/assets/kamp1.webp';
-  static String kamp2 = 'lib/assets/kamp2.webp';
-  static String kamp3 = 'lib/assets/kamp3.webp';
-  static String kamp4 = 'lib/assets/kamp4.webp';
+  static String soleSeekers1 = 'assets/soleSeekers1.webp';
+  static String soleSeekers2 = 'assets/soleSeekers2.webp';
+  static String soleSeekers3 = 'assets/soleSeekers3.webp';
+  static String soleSeekers4 = 'assets/soleSeekers4.webp';
+  static String carcare1 = 'assets/carcare1.webp';
+  static String carcare2 = 'assets/carcare2.webp';
+  static String carcare3 = 'assets/carcare3.webp';
+  static String carcare4 = 'assets/carcare4.webp';
+  static String cosmic1 = 'assets/cosmic1.webp';
+  static String cosmic2 = 'assets/cosmic2.webp';
+  static String cosmic3 = 'assets/cosmic3.webp';
+  static String cosmic4 = 'assets/cosmic4.webp';
+  static String mindscribe1 = 'assets/mindscribe1.webp';
+  static String mindscribe2 = 'assets/mindscribe2.webp';
+  static String mindscribe3 = 'assets/mindscribe3.webp';
+  static String mindscribe4 = 'assets/mindscribe4.webp';
+  static String cifarlens1 = 'assets/CIFAR LENS1.webp';
+  static String cifarlens2 = 'assets/CIFAR LENS2.webp';
+  static String cifarlens3 = 'assets/CIFAR LENS3.webp';
+  static String cifarlens4 = 'assets/CIFAR LENS4.webp';
+  static String kamp1 = 'assets/kamp1.webp';
+  static String kamp2 = 'assets/kamp2.webp';
+  static String kamp3 = 'assets/kamp3.webp';
+  static String kamp4 = 'assets/kamp4.webp';
   static List<ProjectModel> projectList = [
+    ProjectModel(
+        projectTitle: 'Mindscribe',
+        projectDescription:
+            '''MindScribe is an empathetic, offline-first personal journaling app built with Flutter. It combines a distraction-free writing experience with an AI-powered reflection companion that extracts sentiment, generates summaries, provides actionable takeaways, and prompts deeper self-discovery.''',
+        projectStack: [
+          'Dart',
+          'Flutter',
+          'Riverpod Package',
+          'Sqflite Package',
+          'Flutter secure storage',
+          'Dio Package',
+          'Docker',
+          'Ngrok',
+          'Third-party Packages',
+          'Git',
+          'GitHub'
+        ],
+        projectImage: [mindscribe1, mindscribe2, mindscribe3, mindscribe4],
+        projectLink: 'https://github.com/Marvyoha/Mindscribe'),
+    ProjectModel(
+        projectTitle: 'CIFAR Lens',
+        projectDescription:
+            '''CIFAR Lens is a Flutter app that performs real-time on-device image classification for the 10 CIFAR-10 classes using a post-training INT8-quantized TFLite model. Inference runs locally with no network calls, ~0.73 ms/image on CPU, and 0.61 MB model size.''',
+        projectStack: [
+          'Dart',
+          'Flutter',
+          'Riverpod Package',
+          'Tflite Package',
+          'Flutter secure storage',
+          'Third-party Packages',
+          'Git',
+          'GitHub'
+        ],
+        projectImage: [cifarlens1, cifarlens2, cifarlens3, cifarlens4],
+        projectLink: 'https://github.com/Marvyoha/CIFAR_Lens'),
     ProjectModel(
         projectTitle: 'SoleSeekers',
         projectDescription:
@@ -184,6 +240,7 @@ designs were both attractive and intuitive for the end-user.''',
           'Firebase Auth',
           'Firebase FireStore',
           'Firebase Storage',
+          'Hive',
           'Third-party Packages',
           'Figma',
           'Git',
