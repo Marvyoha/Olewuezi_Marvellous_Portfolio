@@ -22,7 +22,7 @@ class Content {
       '''
 I'm Olewuezi Marvellous, a passionate Application Developer and On-Device AI/ML Researcher based in Lagos, Nigeria. With a strong foundation in Computer Science, I specialize in bridging production mobile development using Flutter and Dart with efficient, privacy-first on-device machine learning and LLM integration.
 
-Holding a Second Class Upper Bachelor's degree in Computer Science from Caleb University (CGPA: 4.1/5.0), I have expanded my technical toolkit across Dart, Flutter, Python, PyTorch, C++, Java, and Firebase. My work spans the full spectrum of building robust cross-platform applications and optimizing deep learning models for edge deployment.
+Holding a Second Class Upper Bachelor's degree in Computer Science from Caleb University (CGPA: 3.47/4.0), I have expanded my technical toolkit across Dart, Flutter, Python, PyTorch, C++, Java, and Firebase. My work spans the full spectrum of building robust cross-platform applications and optimizing deep learning models for edge deployment.
 
 I pride myself on clean architecture, analytical rigor, and writing performant, testable code. My recent focus centers on model compression (INT8 post-training quantization, PyTorch ➔ ONNX ➔ TFLite) and building intelligent software—from zero-latency vision apps like CIFAR_Lens to smart LLM reflection tools like Mindscribe.
 
